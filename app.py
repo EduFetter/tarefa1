@@ -24,7 +24,7 @@ def piada():
 
 
 @app.route('/piada/<int:id>', methods=['GET'])
-def piada(id):
+def get_piada(id):
     if id < 1 or id > len(piadas):
         return "Piada não encontrada.", 404
     return piadas[id-1] 
