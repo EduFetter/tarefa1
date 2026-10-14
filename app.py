@@ -23,7 +23,7 @@ def piada():
     return random.choice(piadas) 
 
 
-@app.route('/piada/<int:id>')
+@app.route('/piada/<int:id>', methods=['GET'])
 def piada(id):
     if id < 1 or id > len(piadas):
         return "Piada não encontrada.", 404
