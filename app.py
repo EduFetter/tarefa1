@@ -52,7 +52,8 @@ piadas = [
 
 @app.route('/')
 def index():
-    visitas += 1
+    global visitas
+    visitas = visitas + 1
     return jsonify({"visitas": visitas})
 
 
