@@ -52,7 +52,8 @@ piadas = [
 
 @app.route('/')
 def index():
-    return 'Hello, World!'
+    visitas += 1
+    return jsonify({"visitas": visitas})
 
 
 @app.route('/piada')
@@ -67,9 +68,9 @@ def get_piada(id):
     return jsonify(piadas[id-1]) 
 
 
-@route('/visitas')
+@route('/')
 def get_visitas():
-    return jsonify({"visitas": visitas})
+    
 
 
 app.run(host="0.0.0.0", port=8082) 
