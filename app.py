@@ -69,8 +69,7 @@ def get_piada(id):
     return jsonify(piadas[id-1]) 
 
 
-@route('/')
-def get_visitas():
+
     
 
 
