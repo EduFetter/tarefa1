@@ -1,7 +1,9 @@
 from flask import Flask, jsonify, request
+from flask_cors import CORS
 import random
 
 app = Flask(__name__)
+CORS(app)
 
 piadas = [
     {
@@ -59,11 +61,8 @@ def piada():
 @app.route('/piada/<int:id>', methods=['GET'])
 def get_piada(id):
     if id < 1 or id > len(piadas):
-        return "Piada não encontrada.", 404
+        return jsonify({"error": "Piada não encontrada."}), 404
     return jsonify(piadas[id-1]) 
-
-
-
 
 
 
