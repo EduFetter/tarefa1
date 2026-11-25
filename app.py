@@ -29,7 +29,8 @@ def index():
 
 
 @app.route('/led/<string:status>')
-def led(status):
+def led_page(status):
+    global led
     if status == "ON":
         led.on()
         return "LED ligado"
